@@ -1,24 +1,24 @@
 <template>
-  <div class="relative h-screen flex text-white">
+  <div class="min-w-[768px] relative h-screen flex text-white">
     <!-- BARRE LATERALE -->
-    <div class="w-[13%] px-5 py-6 bg-black text-gray-400">
+    <div class="w-[25%] px-5 py-6 bg-black text-gray-400 lg:w-[22%] xl:w-[18%] 2xl:w-[13%]">
       <div class="flex">
         <img class="w-8" src="/images/logo.svg" alt="Spotiwind">
         <h1 class="text-white text-2xl ml-2 font-semibold">Spotiwind</h1>
       </div>
-      <div class="mt-10 font-medium">
+      <div class="mt-10 font-medium flex flex-col items-start">
         <button class="mb-4 hover:text-white transition duration-300"><i class="fa-solid fa-house mr-5"></i> Accueil</button>
         <button class="mb-4 hover:text-white transition duration-300"><i class="fa-solid fa-magnifying-glass mr-5"></i> Rechercher</button>
         <button class="mb-4 hover:text-white transition duration-300"><i class="fa-solid fa-table-list mr-5"></i> Bibliothèque</button>
       </div>
-      <div class="mt-10 font-medium">
+      <div class="mt-10 font-medium flex flex-col items-start">
         <button class="mb-4 hover:text-white transition duration-300"><i class="fa-solid fa-square-plus mr-5"></i> Créer une playlist</button>
         <button class="mb-4 hover:text-white transition duration-300"><i class="fa-solid fa-heart text-rose-400 mr-5"></i> Titres likés</button>
       </div>
       <hr class="mt-5 border-gray-700">
     </div>
     <!-- CONTENU -->
-    <div class="w-[87%] px-3 py-2 bg-neutral-900">Content</div>
+    <Home></Home>
     <!-- BARRE DE LECTURE -->
     <div class="absolute bottom-0 bg-neutral-900 w-full h-24 border-t border-neutral-800">
       <div class="flex px-5 h-full justify-between">
@@ -32,9 +32,7 @@
             <p class="text-xs text-neutral-500"><a class="hover:underline" href="#">Stardust</a></p>
           </div>
           <div>
-            <button>
-              <i class="fa-regular fa-heart"></i>
-            </button>
+            <Like :like="true"></Like>
           </div>
         </div>
         <!-- Contrôles du lecteur -->
@@ -75,3 +73,7 @@
     </div>
   </div>
 </template>
+<script setup>
+import Home from './components/pages/Home.vue';
+import Like from './components/icons/Like.vue';
+</script>
